@@ -1,0 +1,14 @@
+@use "@src/utils.scss";
+
+.footer {
+  @extend .flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: var(--clr-box);
+  padding: 2.5em;
+
+  nav {
+    @extend .flex;
+    gap: 1em;
+  }
+}

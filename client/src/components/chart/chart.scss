@@ -1,0 +1,33 @@
+@use "@src/utils.scss";
+
+.svg-container {
+  position: relative;
+  padding: 1em;
+  background-color: transparent;
+  box-shadow: 0 0 0.4em 0.2em var(--clr-shade);
+  margin-top: 1em;
+}
+
+.tooltip {
+  position: absolute;
+  inset: 1em 1em auto auto;
+  box-shadow: 0 0 .4em  var(--clr-primary);
+  padding: .75em;
+  border-radius: 0.5em;
+}
+
+.chart-label {
+    fill: var(--clr-primary);
+}
+
+@media (1024px <width<=1500px) {
+  .chart-container {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: 1fr 1fr;
+
+    h1 {
+      grid-column: 1/-1;
+    }
+  }
+}

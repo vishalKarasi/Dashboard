@@ -1,0 +1,48 @@
+@use "@src/utils.scss";
+
+.formContainer {
+  position: relative;
+  min-width: 350px;
+  max-width: fit-content;
+  padding: 1em 2em;
+  border-radius: 1em;
+  box-shadow: 0 0 1em 0.25em var(--clr-shade);
+  background-color: var(--clr-bg);
+  display: grid;
+  gap: 1em;
+
+  .changeForm {
+    @extend .flex;
+    gap: .5em;
+
+    button {
+      background-color: transparent;
+      font-size: .9em;
+      color: var(--clr-primary);
+    }
+  }
+}
+
+.form {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 0.5em;
+}
+
+@media (1024px < width <= 1500px) {
+  .adminForm {
+    grid-template-columns: 1fr 1fr;
+
+    & > *:nth-child(n + 3) {
+      grid-column: 1/-1;
+    }
+
+    button {
+      grid-column: 1/-1;
+    }
+
+    .closeBtn {
+      right: -2.75em;
+    }
+  }
+}

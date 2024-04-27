@@ -1,0 +1,95 @@
+@use "@src/utils.scss";
+
+#profile {
+  display: grid;;
+  align-items: center;
+  flex-direction: column;
+
+  .profilePic {
+    @extend .flex;
+    position: relative;
+    margin: 4vw;
+    aspect-ratio: 1/1;
+    box-shadow: 0 0 1em .1em var(--clr-primary);
+    border-radius: 100vmax;
+
+    img {
+      border-radius: 100vmax;
+    }
+
+    .editPfp {
+      position: absolute;
+      @extend .flex;
+      background-color: var(--clr-primary);
+      width: 3em;
+      aspect-ratio: 1/1;
+      border-radius: 100%;
+      inset: auto 8% 8% auto;
+    }
+  }
+
+  .editForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+
+    input {
+      font: var(--font-link);
+      padding-left: 0.5em;
+      border-radius: 0.2em;
+      padding: 1em;
+
+      &::placeholder {
+        opacity: 1;
+      }
+    }
+
+    .highlight {
+      font: var(--font-link);
+      font-size: 2em;
+
+      &::before {
+        content: attr(data-label);
+        color: var(--clr-primary);
+        margin-right: 0.5em;
+      }
+    }
+
+    .setting {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      width: 100%;
+      gap: 1em;
+      margin-top: 0.5em;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (860px <= width) {
+  #profile {
+    grid-template-columns: 1fr 1fr;
+    margin: auto auto;
+    width: 75%;
+    gap: 5vw;
+
+    .profilePic {
+      margin: 0;
+
+      .editPfp {
+        width: 4em;
+      }
+    }
+
+    .editForm {
+      .setting {
+        flex-direction: row;
+      }
+    }
+  }
+}

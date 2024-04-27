@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@app/*": ["src/app/*"],
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@routes/*": ["src/pages/routes/*"],
+      "@utility/*": ["src/utility/*"],
+      "@widgets/*": ["src/widgets/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+}

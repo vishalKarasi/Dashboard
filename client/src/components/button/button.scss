@@ -1,0 +1,64 @@
+@use "@src/utils.scss";
+
+.btn {
+  @extend .flex;
+  font: var(--font-link);
+  color: var(--clr-bg);
+  gap: 0.25em;
+  border-radius: 100vmax;
+  padding: 0.75em 2em;
+  transition: all 0.4s linear;
+
+  &:hover {
+    background-color: transparent;
+    scale: 0.9;
+  }
+
+  svg {
+    scale: 0.75;
+  }
+}
+
+.btn-primary,
+.btn-delete,
+.btn-edit {
+  @extend .btn;
+}
+
+.btn-primary {
+  background-color: var(--clr-primary);
+
+  &:hover {
+    color: var(--clr-primary);
+    outline: 0.2em solid var(--clr-primary);
+  }
+}
+
+.btn-cancel {
+  @extend .flex;
+  position: absolute;
+  inset: 0 0 auto auto;
+  width: 2.5em;
+  aspect-ratio: 1/1;
+  background-color: var(--clr-invalid);
+  border-bottom-left-radius: 1.25em;
+  border-top-right-radius: 1.25em;
+}
+
+.btn-edit {
+  background-color: var(--clr-valid);
+
+  &:hover {
+    color: var(--clr-valid);
+    outline: 0.1em solid var(--clr-valid);
+  }
+}
+
+.btn-delete {
+  background-color: var(--clr-invalid);
+
+  &:hover {
+    color: var(--clr-invalid);
+    outline: 0.1em solid var(--clr-invalid);
+  }
+}

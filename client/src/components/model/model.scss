@@ -1,0 +1,34 @@
+@use "@src/utils.scss";
+
+.loading {
+  @extend .flex;
+  height: calc(100dvh - 4rem);
+}
+
+.spinner {
+  width: 5rem;
+  height: 5rem;
+  border: 1rem solid var(--clr-box);
+  border-top-color: var(--clr-primary);
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+.error {
+  @extend .flex;
+  grid-column: 1/-1;
+  height: calc(100dvh - 2rem);
+  font-size: 3em;
+  font-family: roboto;
+  text-align: center;
+  color: red;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,81 @@
+.inputField {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+
+  .inputLabel {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--clr-box);
+    position: absolute;
+    height: 2.5em;
+    left: 0.5em;
+    border-radius: 100vmax;
+    pointer-events: none;
+  }
+
+  .input {
+    background-color: var(--clr-box);
+    grid-column: 1/-1;
+    height: 3em;
+    padding: 0 2em 0 0.5em;
+    border-radius: 0.25em;
+
+    &:is(:focus, .focused) {
+      border: 0.1em solid var(--clr-invalid);
+    }
+
+    &:valid {
+      border: 0.1em solid var(--clr-valid);
+    }
+
+    &:is(:focus, :valid, .focused) ~ .inputLabel {
+      top: -0.75em;
+      scale: 0.75;
+      padding-inline: 1em;
+      height: 1.5em;
+    }
+
+    &:invalid ~ .inputError.focused {
+      visibility: visible;
+    }
+
+    &:valid ~ .inputError.focused {
+      visibility: hidden;
+    }
+
+    &:is(:focus, .focused) ~ .inputLabel {
+      color: var(--clr-invalid);
+      border-top: 0.15em solid var(--clr-invalid);
+    }
+
+    &:valid ~ .inputLabel {
+      color: var(--clr-valid);
+      border-top: 0.15em solid var(--clr-valid);
+    }
+
+    &:is(:focus, .focused) ~ svg {
+      color: var(--clr-invalid);
+    }
+
+    &:valid ~ svg {
+      color: var(--clr-valid);
+    }
+  }
+
+  svg {
+    position: absolute;
+    right: 0.5em;
+    height: 2.5em;
+  }
+
+  .inputError {
+    grid-row: 2;
+    padding-left: 0.5em;
+    color: var(--clr-invalid);
+    font-size: 0.75em;
+    visibility: hidden;
+  }
+}
